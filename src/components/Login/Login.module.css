@@ -61,6 +61,14 @@
     font-weight: bolder;
 }
 
+.green_button {
+    background-color: #4caf50;
+}
+
+.green_button:hover {
+    background-color: #45a049;
+}
+
 .forgot_password {
     display: block;
     text-align: center;

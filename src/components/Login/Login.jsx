@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import logo from '../../assets/yes-logo.svg';
 
 import styles from './Login.module.css';
@@ -6,6 +6,12 @@ import styles from './Login.module.css';
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [formValid, setFormValid] = useState(false);
+
+  useEffect(() => {
+    const isValid = email.trim() !== '' && password.trim() !== '';
+    setFormValid(isValid);
+  }, [email, password]);
 
   const handleEmailChange = (event) => {
     setEmail(event.target.value);
@@ -54,7 +60,10 @@ const Login = () => {
                 required
               />
             </div>
-            <button type="submit" className={styles.login_button}>
+            <button
+              type="submit"
+              className={`${styles.login_button} ${formValid ? styles.green_button : ''}`}
+            >
               Entrar
             </button>
           </form>
