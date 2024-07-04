@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 
+import styles from './Login.module.css';
+
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -25,12 +27,12 @@ const Login = () => {
   };
 
   return (
-    <div className="background">
-      <div className="login-container">
-        <div className="login-box">
+    <div className={styles.background}>
+      <div className={styles.login_container}>
+        <div className={styles.login_box}>
           <h1>Autenticação</h1>
           <form onSubmit={handleSubmit}>
-            <div className="input-group">
+            <div className={styles.input_group}>
               <input
                 type="email"
                 placeholder="E-mail"
@@ -39,7 +41,7 @@ const Login = () => {
                 required
               />
             </div>
-            <div className="input-group">
+            <div className={styles.input_group}>
               <input
                 type="password"
                 placeholder="Senha"
@@ -48,16 +50,16 @@ const Login = () => {
                 required
               />
             </div>
-            <button type="submit" className="login-button">
+            <button type="submit" className={styles.login_button}>
               Entrar
             </button>
           </form>
-          <a href="#" className="forgot-password">
+          <a href="#" className={styles.forgot_password}>
             Esqueci minha senha
           </a>
-          <p className="policy">
-            Ao efetuar login, declaro estar de acordo com a
-            <a href="#">Política de Privacidade</a> e o <a href="#">Termo de Uso</a>
+          <p className={styles.policy}>
+            Ao efetuar login, declaro estar de acordo com a{' '}
+            <a href="#">Política de Privacidade</a> e o <a href="#">Termo de Uso</a>{' '}
             da Plataforma
           </p>
         </div>
