@@ -7,6 +7,7 @@ const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [formValid, setFormValid] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
 
   useEffect(() => {
     const isValid = email.trim() !== '' && password.trim() !== '';
@@ -15,10 +16,12 @@ const Login = () => {
 
   const handleEmailChange = (event) => {
     setEmail(event.target.value);
+    setErrorMessage('');
   };
 
   const handlePasswordChange = (event) => {
     setPassword(event.target.value);
+    setErrorMessage('');
   };
 
   const handleSubmit = (event) => {
@@ -29,7 +32,7 @@ const Login = () => {
     if (email === emailPadrao && password === senhaPadrao) {
       console.log('Usuário autenticado!');
     } else {
-      console.log('Usuário ou senha incorretos!');
+      setErrorMessage('Usuário ou senha incorretos!');
     }
   };
 
@@ -59,6 +62,11 @@ const Login = () => {
                 onChange={handlePasswordChange}
                 required
               />
+              {errorMessage && (
+                <div className={styles.error_message}>
+                  {errorMessage}
+                </div>
+              )}
             </div>
             <button
               type="submit"
