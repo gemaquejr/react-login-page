@@ -28,6 +28,8 @@ const Login = () => {
 
   return (
     <div className={styles.background}>
+      <div className={styles.rectangle}>
+      </div>
       <div className={styles.login_container}>
         <div className={styles.login_box}>
           <h1>Autenticação</h1>
