@@ -1,11 +1,15 @@
 import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Login from './components/Login/Login';
 
-const App = () => {
+function App() {
   return (
-    <div>
-      <h1>Vamos fazer essa página de Login!</h1>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Login />} />
+      </Routes>
+    </Router>
   );
-};
+}
 
 export default App;
