@@ -94,3 +94,9 @@
     justify-content: flex-end;
     align-items: center;
 }
+
+.logo {
+    width: 350px;
+    height: auto;
+    margin-right: 300px;
+}

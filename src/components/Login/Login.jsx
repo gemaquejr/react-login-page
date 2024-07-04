@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import logo from '../../assets/yes-logo.svg';
 
 import styles from './Login.module.css';
 
@@ -29,6 +30,7 @@ const Login = () => {
   return (
     <div className={styles.background}>
       <div className={styles.rectangle}>
+        <img src={logo} alt="Yes Certificações" className={styles.logo} />
       </div>
       <div className={styles.login_container}>
         <div className={styles.login_box}>
