@@ -1,13 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import logo from '../../assets/yes-logo.svg';
+import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 
 import styles from './Login.module.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [formValid, setFormValid] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
+  const [passwordVisible, setPasswordVisible] = useState(false);
 
   useEffect(() => {
     const isValid = email.trim() !== '' && password.trim() !== '';
@@ -36,6 +39,10 @@ const Login = () => {
     }
   };
 
+  const togglePasswordVisibility = () => {
+    setPasswordVisible(!passwordVisible);
+  };
+
   return (
     <div className={styles.background}>
       <div className={styles.rectangle}>
@@ -56,12 +63,15 @@ const Login = () => {
             </div>
             <div className={styles.input_group}>
               <input
-                type="password"
+                type={passwordVisible ? "text" : "password"}
                 placeholder="Senha"
                 value={password}
                 onChange={handlePasswordChange}
                 required
               />
+              <span className={styles.toggle_password} onClick={togglePasswordVisibility}>
+                <FontAwesomeIcon icon={passwordVisible ? faEyeSlash : faEye} />
+              </span>
               {errorMessage && (
                 <div className={styles.error_message}>
                   {errorMessage}
