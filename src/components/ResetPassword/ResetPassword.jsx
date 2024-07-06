@@ -10,7 +10,7 @@ const ResetPassword = () => {
   const { email } = location.state || { email: '[Email do usuário]' };
 
   const handleCreateNewPassword = () => {
-    navigate('/reset-password');
+    navigate('/reset-password-form');
   };
 
   const formatDate = (date) => {
