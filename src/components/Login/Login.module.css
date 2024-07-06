@@ -129,3 +129,10 @@
     height: auto;
     margin-right: 300px;
 }
+
+.toast_success {
+    background-color: #00C65E !important;
+    color: white !important;
+    font-weight: bold;
+    font-size: 15px;
+  }

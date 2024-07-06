@@ -23,7 +23,7 @@ const Login = () => {
     if (location.state && location.state.message) {
       toast.success(location.state.message, {
         toastId: 'success',
-        className: 'toast_success',
+        className: styles.toast_success,
       });
       
     }
