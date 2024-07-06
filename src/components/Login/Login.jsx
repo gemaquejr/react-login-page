@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import logo from '../../assets/yes-logo.svg';
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 
@@ -85,9 +86,9 @@ const Login = () => {
               Entrar
             </button>
           </form>
-          <a href="#" className={styles.forgot_password}>
+          <Link to="/forgot-password" className={styles.forgot_password}>
             Esqueci minha senha
-          </a>
+          </Link>
           <p className={styles.policy}>
             Ao efetuar login, declaro estar de acordo com a{' '}
             <a href="#">Política de Privacidade</a> e o <a href="#">Termo de Uso</a>{' '}
