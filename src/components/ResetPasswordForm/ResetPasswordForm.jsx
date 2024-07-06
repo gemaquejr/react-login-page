@@ -56,7 +56,7 @@ const ResetPasswordForm = () => {
           title: 'Senha Redefinida!',
           text: 'Sua senha foi redefinida com sucesso.',
         }).then(() => {
-          navigate('/'); 
+          navigate('/', { state: { message: 'Senha redefinida com sucesso!' } }); 
         });
       } else {
         Swal.fire({

@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import logo from '../../assets/yes-logo.svg';
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 
 import styles from './Login.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -12,11 +14,20 @@ const Login = () => {
   const [formValid, setFormValid] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
   const [passwordVisible, setPasswordVisible] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const isValid = email.trim() !== '' && password.trim() !== '';
     setFormValid(isValid);
-  }, [email, password]);
+
+    if (location.state && location.state.message) {
+      toast.success(location.state.message, {
+        toastId: 'success',
+        className: 'toast_success',
+      });
+      
+    }
+  }, [email, password, location]);
 
   const handleEmailChange = (event) => {
     setEmail(event.target.value);
