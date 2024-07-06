@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Swal from 'sweetalert2';
 import { useNavigate } from 'react-router-dom';
+
 import styles from './ForgotPassword.module.css';
 
 const ForgotPassword = () => {
@@ -18,6 +19,8 @@ const ForgotPassword = () => {
         icon: 'success',
         title: 'E-mail Enviado!',
         text: `Um e-mail de recuperação foi enviado para ${email}.`,
+      }).then(() => {
+        navigate('/reset-password', { state: { email }});
       });
       setEmail('');
     };
