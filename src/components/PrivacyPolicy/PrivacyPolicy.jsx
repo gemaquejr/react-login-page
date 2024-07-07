@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 import styles from './PrivacyPolicy.module.css';
 
 const PrivacyPolicy = () => {
@@ -27,6 +29,9 @@ const PrivacyPolicy = () => {
                     <li>Para esclarecer qual canal de comunicação poderá ser utilizado em caso de eventuais reclamações ou dúvidas;</li>
                     <li>Para garantir o consentimento do usuário a respeito de todos os mecanismos utilizados no site, assim como as limitações e direitos que lhe são impostos.</li>
                 </ul>
+                <Link to="/" className={styles.back_button}>
+                    Voltar para Home
+                </Link>
             </div>
           </div>
         </div>
