@@ -5,6 +5,7 @@ import ForgotPassword from './components/ForgotPassword/ForgotPassword';
 import ResetPassword from './components/ResetPassword/ResetPassword';
 import ResetPasswordForm from './components/ResetPasswordForm/ResetPasswordForm';
 import PrivacyPolicy from './components/PrivacyPolicy/PrivacyPolicy';
+import TermsOfUse from './components/TermsOfUse/TermsOfUse'
 
 import './App.css'
 
@@ -17,6 +18,7 @@ function App() {
         <Route path="/reset-password" element={<ResetPassword />} />
         <Route path="/reset-password-form" element={<ResetPasswordForm />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/terms-of-use" element={<TermsOfUse />} />
       </Routes>
     </Router>
   );

@@ -102,7 +102,7 @@ const Login = () => {
           </Link>
           <p className={styles.policy}>
             Ao efetuar login, declaro estar de acordo com a{' '}
-            <Link to="/privacy-policy">Política de Privacidade</Link> e o <a href="#">Termo de Uso</a>{' '}
+            <Link to="/privacy-policy">Política de Privacidade</Link> e o <Link to="/terms-of-use">Termo de Uso</Link>{' '}
             da Plataforma
           </p>
         </div>
